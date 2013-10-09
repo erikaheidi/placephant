@@ -9,3 +9,6 @@ config:
   title: "PlacePhant - an image placeholder featuring elephpants"
   description: "A Simple placeholder service for the PHP lovers out there, featuring lovely elephpants."
   resources: "%root_dir%/src/Placephant/Resources/images"
+  #Maximum image dimensions
+  max_width: 2500
+  max_height: 2500
