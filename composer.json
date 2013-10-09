@@ -1,0 +1,13 @@
+{
+    "require": {
+        "silex/silex": "1.1.*",
+        "flint/flint":"~1.0",
+        "symfony/yaml": "2.3.x",
+        "symfony/finder": "2.3.*",
+        "imanee/imanee": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+
+}
