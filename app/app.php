@@ -8,16 +8,11 @@ $app->get('/{width}/{height}/{bw}', function($width, $height, $bw) use ($app) {
 
     $resource = $app['resources']->getRandom();
 
-    /*
-    $response = new Response();
-    $response->headers->set('Content-Type', 'image/jpg');
-    $response->headers->set('Content-length', filesize($resource));
-    $response->headers->set('Connection', 'Keep-Alive');
-    $response->headers->set('Accept-Ranges','bytes');
-    $response->send();
-    */
+    if (!$height)
+        $height = $width;
+
     $imanee = (new \Imanee\Imanee($resource))
-        ->thumbnail($width, $height, true);
+        ->thumbnail(abs($width), abs($height), true);
 
     if ($bw) {
        /* apply black and white filter */
@@ -26,6 +21,7 @@ $app->get('/{width}/{height}/{bw}', function($width, $height, $bw) use ($app) {
     return new Response($imanee->output(), 200, array('Content-Type' => 'image/jpg'));
 
 })
+->value("height", 0)
 ->value("bw", false);
 
 $app->get('/', function() use ($app) {

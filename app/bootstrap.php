@@ -1,14 +1,12 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 
-//$app = new Silex\Application();
-
 use Flint\Application;
-
 
 $resource_dir = __DIR__ . "/../src/resources";
 
 $app = new Application(__DIR__, true);
+$app['debug'] = false;
 #$app->configure('config.yml');
 
 /* definitions */
