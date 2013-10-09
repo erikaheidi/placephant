@@ -12,6 +12,9 @@ $app = new Application(__DIR__, true);
 #$app->configure('config.yml');
 
 /* definitions */
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/views',
+));
 
 $app['resources'] = $app->share(function() use($resource_dir) {
     return new Helper\Resource();
