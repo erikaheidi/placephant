@@ -1,0 +1,11 @@
+config:
+  name: "placephant"
+  url: "http://placephant.com"
+  #App Title
+  title: "PlacePhant - an image placeholder featuring elephpants"
+  #App Description
+  description: "A Simple placeholder service for the PHP lovers out there, featuring lovely elephpants."
+  #Set to true for debug
+  debug: false
+  #Default resources directory relative to src folder
+  resources: "resources"

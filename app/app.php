@@ -25,7 +25,7 @@ $app->get('/{width}/{height}/{bw}', function($width, $height, $bw) use ($app) {
 ->value("bw", false);
 
 $app->get('/', function() use ($app) {
-    return $app['twig']->render('index.twig.html');
+    return $app['twig']->render('index.twig.html', array ("config" => $app['config']));
 });
 
 $app->run();
