@@ -11,6 +11,12 @@ $app->get('/{width}/{height}/{bw}', function($width, $height, $bw) use ($app) {
     if (!$height)
         $height = $width;
 
+    if ($height > $app['config']['max_height'])
+        $height = $app['config']['max_height'];
+
+    if ($width > $app['config']['max_width'])
+        $width = $app['config']['max_width'];
+
     $imanee = (new \Imanee\Imanee($resource))
         ->thumbnail(abs($width), abs($height), true);
 

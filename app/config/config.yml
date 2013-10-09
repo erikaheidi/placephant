@@ -9,3 +9,6 @@ config:
   debug: false
   #Default resources directory relative to src folder
   resources: "resources"
+  #Maximum image dimensions
+  max_width: 2500
+  max_height: 2500
