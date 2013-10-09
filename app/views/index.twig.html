@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PlacePhant - an image placeholder featuring elephpants</title>
+    <title>{{ config.title }}</title>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
@@ -22,12 +22,12 @@
 
     <div class="row">
         <div class="col-xs-7">
-            <h1>placephant</h1>
+            <h1>{{ config.name }}</h1>
 
-            <p>A Simple placeholder service for the PHP lovers out there, featuring lovely elephpants. </p>
+            <p>{{ config.description }} </p>
 
             <h2>Usage:</h2>
-            <p>Point the src of your images to placephant.com followed by desired width and height.</p>
+            <p>Point the src of your images to {{ config.url }} followed by desired width and height.</p>
 
             <p>300x200 image:</p>
             <pre class="boxcode">&lt;img src="http://placephant.com/300/200"&gt;</pre>
