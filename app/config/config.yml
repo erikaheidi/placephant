@@ -1,7 +1,7 @@
 twig.path: "%root_dir%/src/Placephant/Resources/views"
 routing.resource: "%root_dir%/app/config/routing.yml"
 
-debug: true
+debug: false
 
 config:
   name: "placephant"
@@ -11,3 +11,4 @@ config:
   resources: "%root_dir%/src/Placephant/Resources/images"
   max_width: 2500
   max_height: 2500
+

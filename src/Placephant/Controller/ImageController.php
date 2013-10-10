@@ -17,20 +17,14 @@ class ImageController extends \Flint\Controller\Controller
      */
     public function showAction($width, $height = 0, $bw = false)
     {
-        $resource = $this->get('resources')->getRandom();
-        $height = $height ?: $width;
-
         $config = $this->get('config');
-        if ($height > $config['max_height']) {
-            $height = $config['max_height'];
-        }
+        $resource = $this->get('resources')->getRandom();
 
-        if ($width > $config['max_width']) {
-            $width = $config['max_width'];
-        }
+        $height = min(abs($height ?: $width), $config['max_height']);
+        $width = min(abs($width), $config['max_width']);
 
         $imanee = (new Imanee($resource))
-            ->thumbnail(abs($width), abs($height), true);
+            ->thumbnail($width, $height, true);
 
         if ($bw) {
            /* apply black and white filter */
