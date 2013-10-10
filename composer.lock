@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "21d0cd68ad892993f3cbc3fb7bb7e405",
+    "hash": "6035ba471aba478afcba4778d19a4147",
     "packages": [
         {
             "name": "flint/flint",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/henrikbjorn/Flint.git",
-                "reference": "0c1a12a6879d0feaca7658d8f8e548a9cef7c96c"
+                "reference": "a4cd0413eed7a78e0562840011833baaad951f1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/henrikbjorn/Flint/zipball/0c1a12a6879d0feaca7658d8f8e548a9cef7c96c",
-                "reference": "0c1a12a6879d0feaca7658d8f8e548a9cef7c96c",
+                "url": "https://api.github.com/repos/henrikbjorn/Flint/zipball/a4cd0413eed7a78e0562840011833baaad951f1e",
+                "reference": "a4cd0413eed7a78e0562840011833baaad951f1e",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 }
             ],
             "description": "Enhanced Silex",
-            "time": "2013-10-01 10:27:27"
+            "time": "2013-10-09 05:21:16"
         },
         {
             "name": "imanee/imanee",
