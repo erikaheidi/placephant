@@ -1,7 +1,8 @@
 twig.path: "%root_dir%/src/Placephant/Resources/views"
+http_cache.cache_dir: "%root_dir%/app/cache/http"
 routing.resource: "%root_dir%/app/config/routing.yml"
-
-debug: false
+routing.options:
+    cache_dir: "%root_dir%/app/cache/routing"
 
 config:
   name: "placephant"
