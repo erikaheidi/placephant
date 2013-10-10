@@ -14,7 +14,7 @@ class ResourceHelper {
 
     public function __construct($resources_dir = null)
     {
-        $this->resources_dir = $resources_dir ?: __DIR__ . "/Resources";
+        $this->resources_dir = $resources_dir ?: __DIR__ . "/Resources/images";
         $this->resources = array();
     }
 

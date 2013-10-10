@@ -1,4 +1,4 @@
-twig.path: "%root_dir%/app/views"
+twig.path: "%root_dir%/src/Placephant/Resources/views"
 routing.resource: "%root_dir%/app/config/routing.yml"
 
 debug: true
@@ -8,4 +8,4 @@ config:
   url: "http://placephant.com"
   title: "PlacePhant - an image placeholder featuring elephpants"
   description: "A Simple placeholder service for the PHP lovers out there, featuring lovely elephpants."
-  resources: "%root_dir%/src/Placephant/Resources"
+  resources: "%root_dir%/src/Placephant/Resources/images"
