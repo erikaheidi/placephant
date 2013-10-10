@@ -20,6 +20,14 @@ class ImageController extends \Flint\Controller\Controller
         $resource = $this->get('resources')->getRandom();
         $height = $height ?: $width;
 
+        $config = $this->get('config');
+        if ($height > $config['max_height']) {
+            $height = $config['max_height'];
+        }
+
+        if ($width > $config['max_width']) {
+            $width = $config['max_width'];
+        }
 
         $imanee = (new Imanee($resource))
             ->thumbnail(abs($width), abs($height), true);
