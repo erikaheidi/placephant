@@ -1,19 +1,20 @@
 <?php
-/**
- * Resource Helper Class
- */
-namespace Helper;
+
+namespace Placephant;
 
 use Symfony\Component\Finder\Finder;
 
-class Resource {
+/**
+ * Resource Helper Class
+ */
+class ResourceHelper {
 
     protected $resources_dir;
     protected $resources;
 
     public function __construct($resources_dir = null)
     {
-        $this->resources_dir = $resources_dir ?: __DIR__ . "/../resources";
+        $this->resources_dir = $resources_dir ?: __DIR__ . "/Resources";
         $this->resources = array();
     }
 
