@@ -3,6 +3,8 @@
 namespace Placephant\Controller;
 
 use Imanee\Imanee;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @package Placephant
@@ -10,12 +12,13 @@ use Imanee\Imanee;
 class ImageController extends \Flint\Controller\Controller
 {
     /**
+     * @param Request $request
      * @param integer $width
      * @param integer $height
      * @param boolean $bw
      * @return Response
      */
-    public function showAction($width, $height = 0, $bw = false)
+    public function showAction(Request $request, $width, $height = 0, $bw = false)
     {
         $config = $this->get('config');
         $resource = $this->get('resources')->getRandom();
@@ -30,8 +33,12 @@ class ImageController extends \Flint\Controller\Controller
            /* apply black and white filter */
         }
 
-        return $this->text($imanee->output(), 200, array(
-            'Content-Type' => 'image/jpg')
-        );
+        $response = Response::create($imanee->output(), 200, array(
+            'Content-Type' => 'image/jpg',
+        ));
+        $response->setPublic();
+        $response->setSharedMaxAge(1800); // 30 minutes
+
+        return $response;
     }
 }
