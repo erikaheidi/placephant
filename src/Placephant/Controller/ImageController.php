@@ -7,18 +7,20 @@ use Imanee\Imanee;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
 /**
  * @package Placephant
  */
 class ImageController extends \Flint\Controller\Controller
 {
     /**
+     * @param Request $request
      * @param integer $width
      * @param integer $height
      * @param Request $request
      * @return Response
      */
-    public function showAction($width, $height = 0, Request $request)
+    public function showAction(Request $request, $width, $height = 0)
     {
         $config = $this->get('config');
         $resource = $this->get('resources')->getRandom();
@@ -35,8 +37,12 @@ class ImageController extends \Flint\Controller\Controller
             } catch (FilterNotFoundException $e) {};
         }
 
-        return $this->text($imanee->output(), 200, array(
-            'Content-Type' => 'image/jpg')
-        );
+        $response = Response::create($imanee->output(), 200, array(
+            'Content-Type' => 'image/jpg',
+        ));
+        $response->setPublic();
+        $response->setSharedMaxAge(1800); // 30 minutes
+
+        return $response;
     }
 }
