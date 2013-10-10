@@ -1,0 +1,11 @@
+
+placephant_default:
+    path: /
+    defaults: { _controller: "Placephant\Controller\DefaultController::indexAction" }
+
+placephant_image_show:
+    path: /{width}/{height}/{bw}
+    defaults:
+        height: 0
+        bw: false
+        _controller: "Placephant\Controller\ImageController::showAction"
