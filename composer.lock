@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6035ba471aba478afcba4778d19a4147",
+    "hash": "7b4080c8d42b8ef3466245119474bf8c",
     "packages": [
         {
             "name": "flint/flint",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/imanee/imanee.git",
-                "reference": "08c26b70fcb67db7ff9f8762c7f9203b3cb13899"
+                "reference": "903552dc88c22b7cdda6e561143c58a8fce7a4b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imanee/imanee/zipball/08c26b70fcb67db7ff9f8762c7f9203b3cb13899",
-                "reference": "08c26b70fcb67db7ff9f8762c7f9203b3cb13899",
+                "url": "https://api.github.com/repos/imanee/imanee/zipball/903552dc88c22b7cdda6e561143c58a8fce7a4b9",
+                "reference": "903552dc88c22b7cdda6e561143c58a8fce7a4b9",
                 "shasum": ""
             },
             "require": {
@@ -103,7 +103,7 @@
                 "manipulation",
                 "php"
             ],
-            "time": "2013-09-18 16:12:45"
+            "time": "2013-10-10 11:59:29"
         },
         {
             "name": "pimple/pimple",

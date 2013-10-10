@@ -4,8 +4,7 @@ placephant_default:
     defaults: { _controller: "Placephant\Controller\DefaultController::indexAction" }
 
 placephant_image_show:
-    path: /{width}/{height}/{bw}
+    path: /{width}/{height}
     defaults:
         height: 0
-        bw: false
         _controller: "Placephant\Controller\ImageController::showAction"
