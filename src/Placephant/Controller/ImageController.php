@@ -16,10 +16,10 @@ class ImageController extends \Flint\Controller\Controller
     /**
      * Default mode, accepts a filter as request parameter
      *
-     * @param Request $request
-     * @param integer $width
-     * @param integer $height
-     * @param Request $request
+     * @param  Request  $request
+     * @param  integer  $width
+     * @param  integer  $height
+     * @param  Request  $request
      * @return Response
      */
     public function showAction(Request $request, $width, $height = 0)
@@ -38,8 +38,8 @@ class ImageController extends \Flint\Controller\Controller
     /**
      * Convenient route to get black and white placeholders.
      *
-     * @param integer $width
-     * @param integer $height
+     * @param  integer  $width
+     * @param  integer  $height
      * @return Response
      */
     public function bwShowAction($width, $height = 0)
@@ -54,8 +54,8 @@ class ImageController extends \Flint\Controller\Controller
     /**
      * Verbose mode.
      *
-     * @param integer $width
-     * @param integer $height
+     * @param  integer  $width
+     * @param  integer  $height
      * @return Response
      */
     public function verboseShowAction($width, $height = 0)
