@@ -6,7 +6,6 @@ use Symfony\Component\Finder\Finder;
 
 class ResourceTest extends \PHPUnit_Framework_TestCase
 {
-
     public function directory_provider()
     {
         $dirBase = str_replace('test/', '', __DIR__); 
@@ -19,22 +18,22 @@ class ResourceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     */ 
-	public function class_can_be_instaciate()
-	{
-		if (class_exists($className = __NAMESPACE__.'\Resource')) {
+     */
+    public function class_can_be_instantiated()
+    {
+        if (class_exists($className = __NAMESPACE__.'\Resource')) {
             $this->assertInstanceOf(
                 $className,
-                new Resource, 
-                sprintf('Class %s cannot be instanciate', $className)
+                new Resource,
+                sprintf('Class %s cannot be instantiated', $className)
             );
         }
-	}
+    }
 
     /**
      * @test
      * @dataProvider directory_provider
-     * @depends class_can_be_instaciate
+     * @depends class_can_be_instantiated
      */
     public function class_can_storage_resource_path_on_resources_dir_property($path, $expected)
     {
@@ -47,5 +46,4 @@ class ResourceTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $value);
     }
-
 }

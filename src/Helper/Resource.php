@@ -6,8 +6,8 @@ namespace Helper;
 
 use Symfony\Component\Finder\Finder;
 
-class Resource {
-
+class Resource
+{
     protected $resources_dir;
     protected $resources;
 
@@ -41,8 +41,9 @@ class Resource {
 
     public function getRandom()
     {
-        if (!count($this->resources))
+        if (!count($this->resources)) {
             $this->loadResources();
+        }
 
         return $this->resources_dir . "/" . $this->resources[array_rand($this->resources)];
     }
