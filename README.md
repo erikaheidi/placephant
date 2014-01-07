@@ -41,3 +41,7 @@ This setup was tested on Ubuntu 12.04 with Vagrant 1.4.2, VirtualBox 4.3.6 and A
 Linux users will also need ``nfs-common`` and ``nfs-kernel-server`` in order to use the NFS shared folders (increases performance).
 
 After the ``vagrant up``, the application will be running at `192.168.33.101` .
+
+####Troubleshooting
+
+**Ansible hangs forever on ``composer install``** : hit ctrl+c to cancel the provision, then run it again. It will finish the other tasks, then you can log in and run ``composer install`` manually. This might be caused by composer asking for github credentials, or some other error from github - so its better to login with `vagrant ssh` and check what's going on.
