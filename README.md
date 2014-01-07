@@ -31,4 +31,13 @@ Placephant requires php >= 5.4 and the php5-imagick extension.
 
 ###Vagrant
 
-A Vagrant setup is provided, using the **Ansible** ``Provisioner``.  
+A Vagrant setup is provided, using the **Ansible** _Provisioner_.  
+
+####Instructions
+
+You'll need Vagrant, VirtualBox and Ansible. 
+This setup was tested on Ubuntu 12.04 with Vagrant 1.4.2, VirtualBox 4.3.6 and Ansible 1.4.1 .
+
+Linux users will also need ``nfs-common`` and ``nfs-kernel-server`` in order to use the NFS shared folders (increases performance).
+
+After the ``vagrant up``, the application will be running at `192.168.33.101` .
