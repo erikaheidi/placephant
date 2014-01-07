@@ -1,7 +1,5 @@
 <?php
 
-namespace Placephant;
-
 use Flint\Application;
 use Placephant\Provider\PlacephantServiceProvider;
 use Silex\Provider\HttpCacheServiceProvider;

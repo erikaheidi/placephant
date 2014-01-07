@@ -7,8 +7,8 @@ use Symfony\Component\Finder\Finder;
 /**
  * Resource Helper Class
  */
-class ResourceHelper {
-
+class ResourceHelper
+{
     protected $resources_dir;
     protected $resources;
 
@@ -42,8 +42,9 @@ class ResourceHelper {
 
     public function getRandom()
     {
-        if (!count($this->resources))
+        if (!count($this->resources)) {
             $this->loadResources();
+        }
 
         return $this->resources_dir . "/" . $this->resources[array_rand($this->resources)];
     }
