@@ -1,0 +1,19 @@
+##############################################
+# Provisioning based on vagrantee/sandbox-php
+##############################################
+---
+- hosts: all
+  sudo: true
+  vars:
+    doc_root: /vagrant/web
+    sys_packages: [ 'curl', 'vim', 'git']
+    php_packages: [ 'php5-curl', 'php5-cli', 'php-pear', 'php5-imagick']
+  tasks:
+    - include: tasks/init.yml
+    - include: tasks/nginxphp.yml
+    - include: tasks/app.yml
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+    - name: restart php5-fpm
+      service: name=php5-fpm state=restarted

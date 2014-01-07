@@ -16,7 +16,11 @@ You can point the src of your images direct to http://placephant.com with the de
 ``<img src="http://placephant.com/100"/>``
 
 300x250 black and white image: 
-``<img src="http://placephant.com/300/250?filter=bw"/>``
+``<img src="http://placephant.com/g/100/200">``
+``<img src="http://placephant.com/100/200?filter=bw">``
+
+verbose mode - shows the image dimensions on b&w image
+``<img src="http://placephant.com/v/100/200">``
 
 300x250 sepia image: 
 ``<img src="http://placephant.com/300/250?filter=sepia"/>``
@@ -24,3 +28,7 @@ You can point the src of your images direct to http://placephant.com with the de
 ###Requirements (dev)
 
 Placephant requires php >= 5.4 and the php5-imagick extension.
+
+###Vagrant
+
+A Vagrant setup is provided, using the **Ansible** ``Provisioner``.  
