@@ -1,0 +1,29 @@
+---
+- name: init | Update apt
+  sudo: yes
+  apt: update_cache=yes
+
+- name: init | Install Sys Packages
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items: sys_packages
+
+- name: init | Install Curl
+  sudo: yes
+  apt: pkg=curl state=latest
+
+- name: init | Install Vim
+  sudo: yes
+  apt: pkg=vim state=latest
+
+- name: init | make sure python-software-properties is installed
+  sudo: yes
+  apt: pkg=python-software-properties state=latest
+
+- name: init | Add ppa Repository
+  sudo: yes
+  apt_repository: repo='ppa:ondrej/php5'
+
+- name: init | Update apt
+  sudo: yes
+  apt: update_cache=yes
