@@ -1,0 +1,3 @@
+
+placephant:
+    resource: "src/Placephant/Resources/config/routing.yml"

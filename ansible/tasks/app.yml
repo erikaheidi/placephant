@@ -1,0 +1,14 @@
+---
+- name: app | Add PHP ini settings
+  sudo: yes
+  template: src=files/php/extra-ini.tpl dest=/etc/php5/fpm/conf.d/extra.ini
+  notify: restart php5-fpm
+
+- name: app | Install Composer
+  shell: curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer
+
+- name: app | change cache dir permission
+  file: path=/vagrant/app/cache mode=0777
+
+- name: app | Run Composer
+  shell: composer install creates=/vagrant/vendor

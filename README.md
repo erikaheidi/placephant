@@ -1,15 +1,43 @@
-placephant
-==========
+##placephant
 
 This is a very simple placeholder project featuring lovely elephpants.
-It's written on Silex, the microframework based on Symfony 2.
+It's built with Silex+Flint.
 
-Its Open Source, so you can use the codebase to your very own placeholder thingee.
+You can use this project as a base for your very own image placeholder. Just change the settings in the app/config/config.yml file and use your own image resources.
 
-Still needs some improvements, of course! You are welcome to PR.
+###Usage
 
-Coming Soon:
+You can point the src of your images direct to http://placephant.com with the desired width and height as path parameters, as shown below:
 
-** Use of configuration files to make the resources more independent
-** Black and White images
-** More cool elephpant images
+300x250 colored image:
+``<img src="http://placephant.com/300/250"/>``
+
+100x100 square colored image (just need to provide the width): 
+``<img src="http://placephant.com/100"/>``
+
+300x250 black and white image: 
+``<img src="http://placephant.com/g/100/200">``
+``<img src="http://placephant.com/100/200?filter=bw">``
+
+verbose mode - shows the image dimensions on b&w image
+``<img src="http://placephant.com/v/100/200">``
+
+300x250 sepia image: 
+``<img src="http://placephant.com/300/250?filter=sepia"/>``
+
+###Requirements (dev)
+
+Placephant requires php >= 5.4 and the php5-imagick extension.
+
+###Vagrant
+
+A Vagrant setup is provided, using the **Ansible** _Provisioner_.  
+
+####Instructions
+
+You'll need Vagrant, VirtualBox and Ansible. 
+This setup was tested on Ubuntu 12.04 with Vagrant 1.4.2, VirtualBox 4.3.6 and Ansible 1.4.1 .
+
+Linux users will also need ``nfs-common`` and ``nfs-kernel-server`` in order to use the NFS shared folders (increases performance).
+
+After the ``vagrant up``, the application will be running at `192.168.33.101` .

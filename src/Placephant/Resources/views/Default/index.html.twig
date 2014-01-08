@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ config.title }}</title>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="/css/github-fork.css" rel="stylesheet" media="screen">
+    <link href="/css/custom.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/erikaheidi/placephant">Fork me on GitHub</a>
+    </div>
+</div>
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-xs-7">
+            <h1>{{ config.name }}</h1>
+
+            <p>{{ config.description }} </p>
+
+            <h2>Usage:</h2>
+            <p>Point the src of your images to {{ config.url }} followed by desired width and height.</p>
+
+            <p>300x200 image:</p>
+            <pre class="boxcode">&lt;img src="http://placephant.com/300/200"&gt;</pre>
+
+            <p>square image (you just need to define the width):</p>
+            <pre class="boxcode">&lt;img src="http://placephant.com/100"&gt;</pre>
+
+            <p>black and white:</p>
+            <pre class="boxcode">&lt;img src="http://placephant.com/g/100/200"&gt;<br/>&lt;img src="http://placephant.com/100/200?filter=bw"&gt;</pre>
+
+            <p>verbose mode - shows the image dimensions on b&w image</p>
+            <pre class="boxcode">&lt;img src="http://placephant.com/v/100/200"&gt;</pre>
+        </div>
+        <div class="col-xs-5">
+          <img src="/100/200" class="thumbphant" alt="Placeholder 100x200">
+          <img src="/150/200" class="thumbphant" alt="Placeholder 150x200">
+          <img src="/260/60" class="thumbphant" alt="Placeholder 260x60">
+          <img src="/g/260/170" class="thumbphant" alt="Placeholder 260x200">
+          <img src="/v/260/100" class="thumbphant" alt="Placeholder 260x200">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 footer">
+            <p>brought to you by <a href="http://twitter.com/erikaheidi" title="my twitter">@erikaheidi</a>, inspired by <a href="http://twitter.com/michellesanver" title="Geekie, a.k.a. Michelle Sanver">@geekie</a> and cheered on by <a href="http://twitter.com/rdohms" title="Rafael Dohms">@rdohms</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44731708-1', 'placephant.com');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
