@@ -2,6 +2,7 @@
 
 namespace Placephant\Controller;
 
+use Silex\Application;
 use Imanee\Drawer;
 use Imanee\Exception\FilterNotFoundException;
 use Imanee\Imanee;
@@ -39,7 +40,7 @@ class ImageController extends \Flint\Controller\Controller
     /**
      * Convenient route to get black and white placeholders.
      *
-     * @param $width
+     * @param int $width
      * @param int $height
      * @return Response
      */
@@ -55,11 +56,12 @@ class ImageController extends \Flint\Controller\Controller
     /**
      * Verbose mode.
      *
-     * @param $width
+     * @param Application $app
+     * @param int $width
      * @param int $height
      * @return Response
      */
-    public function verboseShowAction($width, $height = 0)
+    public function verboseShowAction(Application $app, $width, $height = 0)
     {
         $imanee = $this->getImageResource($width, $height);
         $imanee->applyFilter('filter_modulate', ['saturation' => 0, 'brightness' => 100]);
@@ -68,6 +70,7 @@ class ImageController extends \Flint\Controller\Controller
 
         $drawer = new Drawer();
         $drawer->setFontColor('white');
+        $drawer->setFont($app['config']['font_default']);
         $imanee->setDrawer($drawer);
 
         $imanee->placeText($text, IMANEE::IM_POS_MID_CENTER, $imanee->getWidth() * 0.8);
@@ -75,6 +78,11 @@ class ImageController extends \Flint\Controller\Controller
         return $this->outputImage($imanee);
     }
 
+    /**
+     * @param $width
+     * @param int $height
+     * @return $this
+     */
     private function getImageResource($width, $height = 0)
     {
         $resource = $this->get('resources')->getRandom();
@@ -83,6 +91,11 @@ class ImageController extends \Flint\Controller\Controller
         return (new Imanee($resource))->thumbnail($width, $height, true);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @return array
+     */
     private function getSize($width, $height = 0)
     {
         $config = $this->get('config');
@@ -93,6 +106,10 @@ class ImageController extends \Flint\Controller\Controller
         return [$width, $height];
     }
 
+    /**
+     * @param Imanee $imanee
+     * @return Response
+     */
     private function outputImage(Imanee $imanee)
     {
         $response = Response::create($imanee->output(), 200, array(
