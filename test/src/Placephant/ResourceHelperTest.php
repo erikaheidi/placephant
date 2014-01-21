@@ -35,7 +35,7 @@ class ResourceHelperTest extends \PHPUnit_Framework_TestCase
      * @dataProvider directory_provider
      * @depends class_can_be_instantiated
      */
-    public function class_can_storage_resource_path_on_resources_dir_property($path, $expected)
+    public function it_can_storage_resource_path_on_resources_dir_property($path, $expected)
     {
         $resource = new ResourceHelper($path);
         $reflection = new ReflectionObject($resource);
