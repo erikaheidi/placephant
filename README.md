@@ -1,11 +1,11 @@
-##placephant
+## placephant
 
 This is a very simple placeholder project featuring lovely elephpants.
 It's built with Silex+Flint.
 
 You can use this project as a base for your very own image placeholder. Just change the settings in the app/config/config.yml file and use your own image resources.
 
-###Usage
+### Usage
 
 You can point the src of your images direct to http://placephant.com with the desired width and height as path parameters, as shown below:
 
@@ -25,15 +25,15 @@ verbose mode - shows the image dimensions on b&w image
 300x250 sepia image: 
 ``<img src="http://placephant.com/300/250?filter=sepia"/>``
 
-###Requirements (dev)
+### Requirements (dev)
 
 Placephant requires php >= 5.4 and the php5-imagick extension.
 
-###Vagrant
+### Vagrant
 
 A Vagrant setup is provided, using the **Ansible** _Provisioner_.  
 
-####Instructions
+#### Instructions
 
 You'll need Vagrant, VirtualBox and Ansible. 
 This setup was tested on Ubuntu 12.04 with Vagrant 1.4.2, VirtualBox 4.3.6 and Ansible 1.4.1 .
@@ -42,6 +42,6 @@ Linux users will also need ``nfs-common`` and ``nfs-kernel-server`` in order to 
 
 After the ``vagrant up``, the application will be running at `192.168.33.101` .
 
-####Troubleshooting
+#### Troubleshooting
 
 **Ansible hangs forever on ``composer install``** : hit ctrl+c to cancel the provision, then run it again. It will finish the other tasks, then you can log in and run ``composer install`` manually. This might be caused by composer asking for github credentials, or some other error from github - so its better to login with `vagrant ssh` and check what's going on.
